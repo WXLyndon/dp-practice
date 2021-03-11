@@ -36,7 +36,7 @@ def solve_knapsack(profits, weights, capacity):
     # maximum profit will be at the bottome-right corner
     return dp[n-1][capacity]
 
-# Time complexity: O(N * C), space complexity: O(C) (We can just use one previous row)
+
 def print_selected_items(dp, profits, weights, capacity):
     print("Selected weights are:", end='')
     n = len(weights)
@@ -53,7 +53,8 @@ def print_selected_items(dp, profits, weights, capacity):
     print()
 
 
-def solve_knapsack_opt1(profits, weights, capacity):
+# Time complexity: O(N * C), space complexity: O(C) (We can just use one previous row)
+def solve_knapsack_opt(profits, weights, capacity):
 
     n = len(profits)
     if capacity <= 0 or n == 0 or n != len(weights):
@@ -84,9 +85,9 @@ def main():
     print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 5))
     print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 6))
     print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 7))
-    print(solve_knapsack_opt1([1, 6, 10, 16], [1, 2, 3, 5], 5))
-    print(solve_knapsack_opt1([1, 6, 10, 16], [1, 2, 3, 5], 6))
-    print(solve_knapsack_opt1([1, 6, 10, 16], [1, 2, 3, 5], 7))
+    print(solve_knapsack_opt([1, 6, 10, 16], [1, 2, 3, 5], 5))
+    print(solve_knapsack_opt([1, 6, 10, 16], [1, 2, 3, 5], 6))
+    print(solve_knapsack_opt([1, 6, 10, 16], [1, 2, 3, 5], 7))
 
 
 main()
