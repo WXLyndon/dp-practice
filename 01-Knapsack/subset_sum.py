@@ -67,6 +67,18 @@ def can_partition_opt2(num, sum):
 
     dp = [False for y in range(sum + 1)]
 
+    # We always can get a 0 sum subset(empty set)
+    dp[0] = True
+
+    for s in range(1, sum + 1):
+        dp[s] = True if num[0] == s else False
+    
+    for i in range(1, n):
+        for s in range(sum, -1, -1):
+            if not dp[s] and s >= num[i]:
+                dp[s] = dp[s - num[i]]
+    
+    return dp[sum]
 
 def main():
     print("Can partition: " + str(can_partition([1, 2, 3, 7], 6)))
@@ -75,6 +87,9 @@ def main():
     print("Can partition: " + str(can_partition_opt1([1, 2, 3, 7], 6)))
     print("Can partition: " + str(can_partition_opt1([1, 2, 7, 1, 5], 10)))
     print("Can partition: " + str(can_partition_opt1([1, 3, 4, 8], 6)))
+    print("Can partition: " + str(can_partition_opt2([1, 2, 3, 7], 6)))
+    print("Can partition: " + str(can_partition_opt2([1, 2, 7, 1, 5], 10)))
+    print("Can partition: " + str(can_partition_opt2([1, 3, 4, 8], 6)))
 
 
 main()
