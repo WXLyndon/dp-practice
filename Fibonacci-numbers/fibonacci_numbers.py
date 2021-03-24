@@ -25,6 +25,7 @@ def calculateFibonacciTab(n):
 
     return dp[n]
 
+
 def calculateFibonacciTabOpt(n):
     if n < 2:
         return n
