@@ -25,6 +25,19 @@ def calculateFibonacciTab(n):
 
     return dp[n]
 
+def calculateFibonacciTabOpt(n):
+    if n < 2:
+        return n
+
+    n1, n2, temp = 0, 1, 0
+    for i in range(2, n + 1):
+        temp = n1 + n2
+        n1 = n2
+        n2 = temp
+    return n2
+
+    return dp[n]
+
 
 def main():
     print("5th Fibonacci is ---> " + str(calculateFibonacciMem(5)))
@@ -33,6 +46,9 @@ def main():
     print("5th Fibonacci is ---> " + str(calculateFibonacciTab(5)))
     print("6th Fibonacci is ---> " + str(calculateFibonacciTab(6)))
     print("7th Fibonacci is ---> " + str(calculateFibonacciTab(7)))
+    print("5th Fibonacci is ---> " + str(calculateFibonacciTabOpt(5)))
+    print("6th Fibonacci is ---> " + str(calculateFibonacciTabOpt(6)))
+    print("7th Fibonacci is ---> " + str(calculateFibonacciTabOpt(7)))
 
 
 main()
