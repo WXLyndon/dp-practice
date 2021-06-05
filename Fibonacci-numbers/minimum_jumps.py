@@ -11,10 +11,6 @@
 #      Output = 4
 # Explanation: Starting from index '0', we can reach the last index through: 0->1->2->3->8
 
-# EX3: Input = {1,1,3,6,9,3,0,1,3}
-#      Output = 4
-#      Explanation: Starting from index '0', we can reach the last index through: 0->1->2->3->8
-
 
 def count_min_jumps_mem(jumps):
     dp = [0 for _ in range(len(jumps))]
