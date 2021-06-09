@@ -9,7 +9,7 @@
 #      Explanation: Starting from index '0', we can reach the top through: 0->3->top
 #      The total fee we have to pay will be (1+2).
 
-# EX1: Number of stairs (n): 4
+# EX2: Number of stairs (n): 4
 #      Fee: {2,3,4,5}
 #      Output: 5
 #      Explanation: Starting from index '0', we can reach the top through: 0->1->top
