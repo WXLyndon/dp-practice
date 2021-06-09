@@ -52,12 +52,27 @@ def find_max_steal_tab(wealth):
     return dp[n]
 
 
+def find_max_steal_opt(wealth):
+    n = len(wealth)
+    if n == 0:
+        return 0
+
+    n1 = 0
+    n2 = wealth[0]
+    for i in range(1, n):
+        n1, n2 = n2, max(n1 + wealth[i], n2)
+
+    return n2
+
+
 def main():
 
     print(find_max_steal_mem([2, 5, 1, 3, 6, 2, 4]))
     print(find_max_steal_mem([2, 10, 14, 8, 1]))
     print(find_max_steal_tab([2, 5, 1, 3, 6, 2, 4]))
     print(find_max_steal_tab([2, 10, 14, 8, 1]))
+    print(find_max_steal_opt([2, 5, 1, 3, 6, 2, 4]))
+    print(find_max_steal_opt([2, 10, 14, 8, 1]))
 
 
 main()
